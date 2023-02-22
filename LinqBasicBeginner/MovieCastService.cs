@@ -11,7 +11,6 @@ namespace LinqBasicBeginner
     public class MovieCastService
     {
         private readonly Datas _data;
-
         public MovieCastService()
         {
             _data = new Datas();
