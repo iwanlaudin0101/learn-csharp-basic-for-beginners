@@ -33,14 +33,14 @@ internal class Program
         //     Console.WriteLine($"| {item.Title} \t | \t {item.Director} \t | \t {item.Rating} \t | \t {item.Duration} \t|");
         // }
 
-        var movieCast = new MovieCastService();
+        // var movieCast = new MovieCastService();
 
-        var allData = movieCast.GetAll();
-        var allDataByMovieId = movieCast.GetMovieCastByMovieId(1);
+        // var allData = movieCast.GetAll();
+        // var allDataByMovieId = movieCast.GetMovieCastByMovieId(1);
 
-        foreach (var item in allDataByMovieId)
-        {
-            Console.WriteLine($"| {item.Title} \t | \t {item.Director} \t | \t {item.ActorName} \t | \t {item.CharacterName}");
-        }
+        // foreach (var item in allDataByMovieId)
+        // {
+        //     Console.WriteLine($"| {item.Title} \t | \t {item.Director} \t | \t {item.ActorName} \t | \t {item.CharacterName}");
+        // }
     }
 }

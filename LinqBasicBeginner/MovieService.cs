@@ -52,6 +52,11 @@ namespace LinqBasicBeginner
             var result = (from movie in _data.movies
                 where movie.Duration > duration
                 select MapToMovieDto(movie)).ToList();
+
+            if (result == null)
+            {
+                throw new ApplicationException("Not Found");
+            }
             
             return result;
         }
