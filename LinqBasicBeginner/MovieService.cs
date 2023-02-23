@@ -19,24 +19,22 @@ namespace LinqBasicBeginner
         public List<MovieDto> GetAll()
         {
             var result = (from movie in _data.movies
-                select MapToMovieDto(movie)
-                
-                // Equivalent
+                select MapToMovieDto(movie)).ToList();
 
-                // select new MovieDto
-                // {
-                //     Title = movie.Title,
-                //     RelaseDate = movie.RelaseDate,
-                //     Director = movie.Director,
-                //     Budget = movie.Budget,
-                //     BoxOffice = movie.BoxOffice,
-                //     Duration = movie.Duration,
-                //     Language = movie.Language,
-                //     Rating = movie.Rating
-                // }
-                
-                ).ToList();
+            return result;
+        }
 
+        public MovieDto? GetMovieById(int id)
+        {
+            var result = (from movie in _data.movies
+                where movie.Id == id
+                select MapToMovieDto(movie)).FirstOrDefault();
+
+            if (result == null)
+            {
+                throw new ApplicationException("Not Found");
+            }
+            
             return result;
         }
         
